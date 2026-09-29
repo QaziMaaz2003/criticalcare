@@ -1,0 +1,30 @@
+/* Design tokens, taken from the Lovable redesign reference.
+   WordPress: paste into style.css :root (or theme.json "settings.color/typography"). */
+:root {
+  --color-bg: oklch(97.5% 0.006 155);
+  --color-fg: oklch(26.5% 0.043 183);
+  --color-muted: oklch(90.5% 0.012 165);
+  --color-muted-fg: oklch(45% 0.03 183);
+  --color-card: oklch(100% 0 0 / 0.72);
+  --color-card-solid: #fff;
+  --color-border: oklch(26.5% 0.043 183 / 0.12);
+  --color-primary: oklch(53% 0.18 27);
+  --color-primary-dark: oklch(45% 0.16 27);
+  --color-primary-fg: oklch(98.5% 0.003 155);
+  --color-accent: oklch(94% 0.025 28);
+  --color-dark: oklch(24% 0.04 190);
+  --color-dark-fg: oklch(96% 0.01 165);
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius: 1rem;
+  --radius-lg: 1.5rem;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 12px 32px -12px oklch(26.5% 0.043 183 / 0.18);
+
+  --container: 72rem;
+  --gutter: 1.25rem;
+  --header-h: 4.5rem;
+  --section-y: clamp(3.5rem, 8vw, 6.5rem);
+}

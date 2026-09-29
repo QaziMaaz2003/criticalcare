@@ -1,0 +1,11 @@
+.footer { background: var(--color-dark); color: var(--color-dark-fg); padding-top: 4rem; }
+.footer__grid { display: grid; gap: 2.5rem; padding-bottom: 3rem; }
+.footer .logo__text small { color: oklch(80% 0.02 170); }
+.footer__blurb { margin-top: 1rem; max-width: 22rem; color: oklch(80% 0.02 170); }
+.footer h3 { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(78% 0.13 27); margin-bottom: 1rem; }
+.footer li { margin-bottom: 0.55rem; }
+.footer a { text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer address { font-style: normal; line-height: 1.8; }
+.footer__bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; padding-block: 1.5rem; border-top: 1px solid rgb(255 255 255 / 0.12); font-size: 0.85rem; color: oklch(75% 0.02 170); }
+@media (min-width: 48rem) { .footer__grid { grid-template-columns: 1.4fr 1fr 1.2fr; } }

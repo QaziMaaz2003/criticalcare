@@ -1,0 +1,23 @@
+.contact__grid { display: grid; gap: 1.5rem; align-items: start; }
+.contact__info { padding: 2rem; }
+.contact__list { display: grid; gap: 1.1rem; margin-top: 1.5rem; }
+.contact__list dt { font: 600 0.75rem/1 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 0.3rem; }
+.contact__list dd { margin: 0; font-size: 1.05rem; }
+.contact__list a { text-decoration: none; }
+.contact__list a:hover { text-decoration: underline; }
+
+.form { padding: 2rem; display: grid; gap: 1.1rem; }
+.form__row { display: grid; gap: 1.1rem; }
+.field { display: grid; gap: 0.4rem; }
+.field label { font-weight: 600; font-size: 0.9rem; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 0.85rem 1rem;
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
+  background: #fff; color: inherit; font: inherit;
+}
+.field textarea { min-height: 7.5rem; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px oklch(53% 0.18 27 / 0.18); }
+.form__status { margin: 0; padding: 0.85rem 1rem; border-radius: var(--radius-sm); background: oklch(93% 0.06 155); font-weight: 600; }
+.form__status[hidden] { display: none; }
+@media (min-width: 40rem) { .form__row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 60rem) { .contact__grid { grid-template-columns: 0.85fr 1.15fr; gap: 2rem; } }
