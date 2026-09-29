@@ -8,7 +8,7 @@ export default function News() {
   return (
     <>
       <PageHero {...pageHeroes.news} crumbs={[{ label: 'News' }]} />
-      <NewsList head={false} />
+      <NewsList head={false} featured />
       <CtaBand />
     </>
   )

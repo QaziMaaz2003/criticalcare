@@ -10,7 +10,7 @@ export default function Work({ limit, head = true, muted = true }) {
     <section className={`section${muted ? ' section--muted' : ''}`}>
       <div className="container">
         {head && <SectionHead eyebrow={work.eyebrow} title={work.title} />}
-        <div className="gallery">
+        <div className={`gallery${limit ? ' gallery--compact' : ''}`}>
           {items.map((item) => (
             <figure key={item.key} className="gallery__item">
               <img src={images[item.key].src} alt={images[item.key].alt} loading="lazy" />

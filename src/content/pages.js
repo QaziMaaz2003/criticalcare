@@ -22,8 +22,8 @@ export const pageHeroes = {
   },
   news: {
     eyebrow: 'Latest News',
-    title: 'News from our team.',
-    text: 'Updates, announcements and stories from Texas Critical Care.',
+    title: 'News and guides from our team.',
+    text: 'Guides, tips and updates on ambulance transport, levels of care and events.',
     image: 'houstonNight',
   },
   careers: {
@@ -68,7 +68,7 @@ export const standards = {
   text:
     'Texas Critical Care is licensed by the Texas Department of State Health Services as a "Mobile Intensive Care Unit". It is the highest level provider license that can be obtained, and a rarity among hundreds of ambulance providers in South East Texas. We meet all standards for emergency response protocols set by the State and City authorities.',
   points: ['Texas DSHS licensed MICU provider', 'State and City emergency response protocols', 'ACLS-guideline emergency medications', 'Well maintained, fully equipped fleet'],
-  image: 'micu',
+  image: 'ambulanceRoad',
 }
 
 // Careers page (copy other than the intro/roles is drafted)

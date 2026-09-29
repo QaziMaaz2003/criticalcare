@@ -18,4 +18,12 @@ export const images = {
   clinician: { src: u('1532938911079-1b06ac7ceec7', 1000), alt: 'Clinician in a white coat holding a red stethoscope' },
   care: { src: u('1580869318757-a6c605b061ed', 900), alt: 'Caregiver holding a patient’s hand in a supportive gesture' },
   caregiver: { src: u('1762955911431-4c44c7c3f408', 1000), alt: 'Caregiver helping two older adults at a table' },
+  interior2: { src: u('1696243144413-503bc482a608', 1200), alt: 'Ambulance interior with stretcher and medical equipment, doors open' },
+  ambulanceCity: { src: u('1619025873875-59dfdd2bbbd6', 1000), alt: 'Ambulance driving down a street beside tall buildings' },
+  ambulanceRoad: { src: u('1705264895993-c544cf74a0c7', 1200), alt: 'Ambulance travelling along a city street' },
+  ambulanceNight: { src: u('1647446732151-5b0cdc252b4d', 1200), alt: 'Ambulance driving fast with its lights on' },
+  team: { src: u('1755189118414-14c8dacdb082', 1000), alt: 'Three healthcare workers standing together in a clinic' },
+  scrubs: { src: u('1594824476967-48c8b964273f', 900), alt: 'Smiling healthcare professional in teal scrubs' },
+  stadium: { src: u('1489944440615-453fc2b6a9a9', 1200), alt: 'Large stadium lit up before an event' },
+  skyline: { src: u('1692154600992-463fa9b27abd', 1400), alt: 'Houston skyline at night' },
 }

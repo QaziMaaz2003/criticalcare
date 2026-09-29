@@ -12,6 +12,7 @@ This React site is deliberately built so it converts to a **classic WordPress th
 | `/services/:slug` | `ServiceDetail.jsx` | `single-service.php` | CPT `service` (slugs: micu, als, bls, wheelchair-transport, special-events) |
 | `/our-work` | `OurWork.jsx` | `archive-work.php` | CPT `work` (or ACF gallery) |
 | `/news` | `News.jsx` | `home.php` | Posts page (blog index) |
+| `/news/:slug` | `NewsDetail.jsx` | `single.php` | Standard `post` |
 | `/careers` | `Careers.jsx` | `page-careers.php` | Page (open roles could be CPT `job`) |
 | `/contact-us` | `Contact.jsx` | `page-contact-us.php` | Page |
 | `/faq` | `FaqPage.jsx` | `page-faq.php` | Page |
@@ -39,7 +40,9 @@ wp-content/themes/texas-critical-care/
 |---|---|---|
 | `Layout.jsx`, `Header.jsx`, `Footer.jsx` | `header.php`, `footer.php` | `wp_nav_menu` (Services has a sub-menu of the 5 service CPTs); phone in Customizer |
 | `PageHero.jsx` | `template-parts/page-hero.php` | Page title, excerpt, featured image; breadcrumbs via Yoast/Rank Math |
-| `CtaBand.jsx`, `Stats.jsx`, `SectionHead.jsx`, `Split.jsx` | `template-parts/*.php` | Options page / ACF fields |
+| `CtaBand.jsx`, `Stats.jsx`, `SectionHead.jsx`, `Split.jsx`, `TrustStrip.jsx` | `template-parts/*.php` | Options page / ACF fields |
+| `IconGrid.jsx`, `MissionVision.jsx`, `CompareTable.jsx` | `template-parts/icon-grid.php`, `mission-values.php`, `compare-table.php` | ACF repeaters (icon, title, text) |
+| `Icon.jsx` | `template-parts/icon.php` | Inline SVG helper (or an SVG sprite) |
 | `Hero.jsx`, `About.jsx`, `MobileIcu.jsx`, `Coverage.jsx`, `Process.jsx`, `Why.jsx`, `Quote.jsx` | `template-parts/section-*.php` | ACF fields / repeaters on the relevant Page |
 | `Services.jsx` | `template-parts/section-services.php` | `WP_Query` on CPT `service` (`limit`, `exclude` props = `posts_per_page`, `post__not_in`) |
 | `Work.jsx` | `template-parts/section-work.php` | `WP_Query` on CPT `work` |
@@ -55,6 +58,8 @@ wp-content/themes/texas-critical-care/
 |---|---|
 | `site.js` | Customizer / ACF Options: phone, fax, email, address, map URLs, founded year. `nav` -> Appearance -> Menus (`primary`). |
 | `services.js` | CPT `service`: title, excerpt, subtitle, badge, body, `highlights` and `idealFor` repeaters, featured image |
+| `extra.js` | ACF repeaters: trust strip, audiences, values, comparison table, careers extras, per-service `glance` + FAQs, FAQ groups (FAQ category taxonomy) |
+| `articles.js` | Standard `post` entries (category, featured image, excerpt, content) |
 | `pages.js` | Page banners (title/excerpt/featured image) + ACF for About story/crew/standards, Careers perks/roles |
 | `about.js`, `hero.js`, `sections.js` | ACF fields (front page / About), news posts -> `post`, gallery -> `work` CPT |
 | `images.js` | Media Library uploads (set alt text there) |
@@ -68,6 +73,7 @@ wp-content/themes/texas-critical-care/
 
 ## 6. Behavior (JS)
 
+- **Scroll reveal:** `Layout.jsx` adds `.reveal` to cards/sections and toggles `.is-visible` with an IntersectionObserver (respects `prefers-reduced-motion`). Copy the ~15 lines into `main.js`; content stays visible if JS is off.
 - **Mobile menu:** toggle `hidden` on `#mobile-menu` and `aria-expanded` on `.menu-toggle`; close on navigation (see `Header.jsx`). This is the only real JS.
 - **Services dropdown:** pure CSS (`:hover` / `:focus-within`), no JS. WordPress adds the `current-menu-item` class instead of the `.active` class React Router sets; restyle `.nav__link.active` accordingly.
 - **Scroll to top on navigation** is automatic in WordPress (full page loads).
@@ -79,7 +85,7 @@ Both forms are stubs that only show a success message. Replace them with a plugi
 ## 8. Before launch
 
 - Replace Unsplash hotlinks with owned, compressed images (WebP), ideally real photos of the fleet and crew.
-- Replace placeholder news posts and the "Our Work" gallery (the original site's were lorem ipsum).
-- Review drafted copy: process steps, "why us", FAQ, coverage towns, service "ideal for" lists, careers perks/role descriptions. Only About, service definitions, equipment, licensing, careers intro and contact details come from the original site.
+- Replace the sample news articles (`articles.js`, educational drafts) and the "Our Work" gallery with real posts and photos (the original site's were lorem ipsum).
+- Review drafted copy: audiences, values/mission wording, comparison table, service FAQs, full FAQ page, careers requirements and hiring steps, news articles, process steps, "why us", FAQ, coverage towns, service "ideal for" lists, careers perks/role descriptions. Only About, service definitions, equipment, licensing, careers intro and contact details come from the original site.
 - The Google Map embed and "View on map" links use the Sugar Land address; the original site linked to a Richmond, TX address. Confirm which is correct.
 - Add SEO (Yoast/Rank Math), `LocalBusiness` schema and a valid SSL certificate. **The current txcriticalcare.com certificate has expired.**

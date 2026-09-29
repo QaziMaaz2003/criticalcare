@@ -12,6 +12,7 @@ export default function About({ teaser = false }) {
       <div className="container about__grid">
         <div className="about__media">
           <img className="about__img" src={images.about.src} alt={images.about.alt} loading="lazy" />
+          <img className="about__img2" src={images.crew.src} alt={images.crew.alt} loading="lazy" />
           <div className="about__since">
             <small>Since</small>
             {site.founded}

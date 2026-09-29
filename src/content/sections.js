@@ -5,10 +5,10 @@ export const process = {
   eyebrow: 'How it works',
   title: 'From first call to safe handoff.',
   steps: [
-    { title: 'Call dispatch', text: 'Contact our team at the number below with the patient’s pickup, destination and level of care.' },
-    { title: 'Clinical review', text: 'We confirm the right level of care (MICU, ALS, BLS or wheelchair) and assign a qualified crew.' },
-    { title: 'Coordinated transport', text: 'Our medics monitor the patient throughout and keep the receiving facility informed.' },
-    { title: 'Documented handoff', text: 'The patient is handed to the receiving team with a complete, documented report.' },
+    { icon: 'phone', title: 'Call dispatch', text: 'Contact our team at the number below with the patient’s pickup, destination and level of care.' },
+    { icon: 'clipboard', title: 'Clinical review', text: 'We confirm the right level of care (MICU, ALS, BLS or wheelchair) and assign a qualified crew.' },
+    { icon: 'truck', title: 'Coordinated transport', text: 'Our medics monitor the patient throughout and keep the receiving facility informed.' },
+    { icon: 'file', title: 'Documented handoff', text: 'The patient is handed to the receiving team with a complete, documented report.' },
   ],
 }
 
@@ -16,10 +16,10 @@ export const why = {
   eyebrow: 'Why Texas Critical Care',
   title: 'Prepared crews. Purpose-built units.',
   items: [
-    { title: 'Highest license level', text: 'Licensed by the Texas Department of State Health Services as a Mobile Intensive Care Unit.' },
-    { title: 'Certified medics', text: 'Critical care certified EMTs, intermediates and paramedics on every call.' },
-    { title: 'Current standards', text: 'We meet all emergency response protocols set by State and City authorities and follow current ACLS guidelines.' },
-    { title: 'Well-maintained fleet', text: 'Ambulances carry monitor/defibrillators, ventilators, CPAP, ETCO2 and SPO2 monitoring.' },
+    { icon: 'shield', title: 'Highest license level', text: 'Licensed by the Texas Department of State Health Services as a Mobile Intensive Care Unit.' },
+    { icon: 'users', title: 'Certified medics', text: 'Critical care certified EMTs, intermediates and paramedics on every call.' },
+    { icon: 'award', title: 'Current standards', text: 'We meet all emergency response protocols set by State and City authorities and follow current ACLS guidelines.' },
+    { icon: 'truck', title: 'Well-maintained fleet', text: 'Ambulances carry monitor/defibrillators, ventilators, CPAP, ETCO2 and SPO2 monitoring.' },
   ],
 }
 
@@ -43,17 +43,16 @@ export const work = {
     { key: 'caregiver', caption: 'Compassionate care' },
     { key: 'fleet', caption: 'Rapid response' },
     { key: 'clinician', caption: 'Clinical excellence' },
+    { key: 'ambulanceRoad', caption: 'On the road' },
+    { key: 'team', caption: 'Our team' },
+    { key: 'interior2', caption: 'Equipped for care' },
+    { key: 'ambulanceNight', caption: 'Day and night' },
   ],
 }
 
-// Placeholder posts. WordPress: replace with the `post` loop (WP_Query).
 export const news = {
   eyebrow: 'Latest News',
-  title: 'News from our team.',
-  posts: [
-    { date: '2015-08-28', image: 'fleet', title: 'First latest news', excerpt: 'Placeholder update. Replace this with a real announcement from Texas Critical Care.' },
-    { date: '2015-07-12', image: 'crew', title: 'Second latest news', excerpt: 'Placeholder update. Replace this with a real announcement from Texas Critical Care.' },
-  ],
+  title: 'News and guides from our team.',
 }
 
 export const testimonial = {

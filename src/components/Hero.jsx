@@ -3,6 +3,7 @@ import { hero } from '../content/hero'
 import { stats } from '../content/about'
 import { site } from '../content/site'
 import { images } from '../content/images'
+import Icon from './Icon'
 
 // WordPress: template-parts/section-hero.php
 export default function Hero() {
@@ -26,6 +27,14 @@ export default function Hero() {
 
         <div className="hero__media">
           <img className="hero__img" src={images.hero.src} alt={images.hero.alt} fetchPriority="high" />
+          <a className="hero__float" href={site.phoneHref}>
+            <span className="hero__float-icon"><Icon name="phone" size={22} /></span>
+            <span>
+              <small>Dispatch</small>
+              <strong>{site.phone}</strong>
+            </span>
+          </a>
+          <img className="hero__accent" src={images.medic.src} alt="" loading="lazy" />
           <ul className="hero__stats">
             {stats.map((s) => (
               <li key={s.label} className="stat card">

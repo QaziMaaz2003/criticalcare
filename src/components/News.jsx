@@ -1,30 +1,55 @@
 import { Link } from 'react-router-dom'
 import SectionHead from './SectionHead'
+import { articles, articlePath } from '../content/articles'
 import { news } from '../content/sections'
 import { images } from '../content/images'
 
-const fmt = (iso) =>
+export const fmtDate = (iso) =>
   new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
 
-// WordPress: template-parts/section-news.php (WP_Query for posts; get_the_date())
-export default function News({ limit, head = true }) {
-  const posts = limit ? news.posts.slice(0, limit) : news.posts
+function ArticleCard({ a, featured = false }) {
   return (
-    <section className="section">
-      <div className="container">
-        {head && <SectionHead eyebrow={news.eyebrow} title={news.title} />}
-        <div className="news__grid">
-          {posts.map((p) => (
-            <article key={p.title} className="news-card card">
-              {p.image && <img className="news-card__img" src={images[p.image].src} alt="" loading="lazy" />}
-              <div className="news-card__body">
-                <time className="news-card__date" dateTime={p.date}>{fmt(p.date)}</time>
-                <h3>{p.title}</h3>
-                <p>{p.excerpt}</p>
-              </div>
-            </article>
-          ))}
+    <article className={`news-card card${featured ? ' news-card--featured' : ''}`}>
+      <Link to={articlePath(a)} className="news-card__media" tabIndex={-1} aria-hidden="true">
+        <img className="news-card__img" src={images[a.image].src} alt="" loading="lazy" />
+      </Link>
+      <div className="news-card__body">
+        <div className="news-card__meta">
+          <span className="tag">{a.category}</span>
+          <time dateTime={a.date}>{fmtDate(a.date)}</time>
         </div>
+        <h3><Link to={articlePath(a)}>{a.title}</Link></h3>
+        <p>{a.excerpt}</p>
+        <Link className="service-card__link" to={articlePath(a)}>
+          Read article <span aria-hidden="true">&rarr;</span>
+        </Link>
+      </div>
+    </article>
+  )
+}
+
+// WordPress: template-parts/section-news.php (WP_Query for posts) + content-card.php
+// Props: limit, head, featured (first post shown large), exclude (slug), muted
+export default function News({ limit, head = true, featured = false, exclude, muted = false, title = news.title, eyebrow = news.eyebrow }) {
+  const list = articles.filter((a) => a.slug !== exclude)
+  const posts = limit ? list.slice(0, limit) : list
+  const [first, ...rest] = posts
+  return (
+    <section className={`section${muted ? ' section--muted' : ''}`}>
+      <div className="container">
+        {head && <SectionHead eyebrow={eyebrow} title={title} />}
+        {featured && first ? (
+          <>
+            <ArticleCard a={first} featured />
+            <div className="news__grid news__grid--2">
+              {rest.map((a) => <ArticleCard key={a.slug} a={a} />)}
+            </div>
+          </>
+        ) : (
+          <div className="news__grid news__grid--3">
+            {posts.map((a) => <ArticleCard key={a.slug} a={a} />)}
+          </div>
+        )}
         {limit && (
           <p className="section__more">
             <Link className="btn btn--outline" to="/news">All news</Link>
