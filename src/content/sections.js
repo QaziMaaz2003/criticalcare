@@ -39,6 +39,10 @@ export const work = {
     { key: 'crew', caption: 'Crew & fleet' },
     { key: 'micu', caption: 'MICU interior' },
     { key: 'wheelchair', caption: 'Wheelchair transport' },
+    { key: 'events', caption: 'Special event standby' },
+    { key: 'caregiver', caption: 'Compassionate care' },
+    { key: 'fleet', caption: 'Rapid response' },
+    { key: 'clinician', caption: 'Clinical excellence' },
   ],
 }
 
@@ -47,8 +51,8 @@ export const news = {
   eyebrow: 'Latest News',
   title: 'News from our team.',
   posts: [
-    { date: '2015-08-28', title: 'First latest news', excerpt: 'Placeholder update. Replace this with a real announcement from Texas Critical Care.' },
-    { date: '2015-07-12', title: 'Second latest news', excerpt: 'Placeholder update. Replace this with a real announcement from Texas Critical Care.' },
+    { date: '2015-08-28', image: 'fleet', title: 'First latest news', excerpt: 'Placeholder update. Replace this with a real announcement from Texas Critical Care.' },
+    { date: '2015-07-12', image: 'crew', title: 'Second latest news', excerpt: 'Placeholder update. Replace this with a real announcement from Texas Critical Care.' },
   ],
 }
 

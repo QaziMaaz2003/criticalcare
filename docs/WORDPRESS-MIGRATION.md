@@ -1,72 +1,85 @@
 # Moving this site to WordPress
 
-This React site is deliberately built so it converts to a **classic WordPress theme**: one page, plain CSS, presentational components, and all copy in data files. Nothing here depends on a router, Tailwind or a state library.
+This React site is deliberately built so it converts to a **classic WordPress theme**: one route per WordPress template, plain CSS, presentational components, and all copy in data files. There is no Tailwind, CSS-in-JS or state library. `react-router-dom` is used only to give each page a clean URL in the prototype; it goes away in WordPress, where each URL is served by a PHP template.
 
-## 1. Theme skeleton
+## 1. Routes -> WordPress templates
+
+| URL | React page (`src/pages/`) | WordPress template | WP object |
+|---|---|---|---|
+| `/` | `Home.jsx` | `front-page.php` | Page set as "Front page" |
+| `/about-us` | `About.jsx` | `page-about-us.php` | Page |
+| `/services` | `Services.jsx` | `archive-service.php` | CPT archive (or a Page with a `service` query) |
+| `/services/:slug` | `ServiceDetail.jsx` | `single-service.php` | CPT `service` (slugs: micu, als, bls, wheelchair-transport, special-events) |
+| `/our-work` | `OurWork.jsx` | `archive-work.php` | CPT `work` (or ACF gallery) |
+| `/news` | `News.jsx` | `home.php` | Posts page (blog index) |
+| `/careers` | `Careers.jsx` | `page-careers.php` | Page (open roles could be CPT `job`) |
+| `/contact-us` | `Contact.jsx` | `page-contact-us.php` | Page |
+| `/faq` | `FaqPage.jsx` | `page-faq.php` | Page |
+| `*` | `NotFound.jsx` | `404.php` | - |
+
+Set permalinks to **Post name** so the URLs match. The route order and table are also commented at the top of `src/App.jsx`.
+
+## 2. Theme skeleton
 
 ```
 wp-content/themes/texas-critical-care/
-├── style.css            # theme header + contents of src/styles/*.css (in the order of index.css)
-├── functions.php        # enqueue fonts + CSS + main.js, register menus, CPTs, theme support
-├── header.php           # <-- Header.jsx
-├── footer.php           # <-- Footer.jsx
-├── front-page.php       # <-- App.jsx (section order is identical)
-├── template-parts/      # one file per component (table below)
+├── style.css            # theme header + contents of src/styles/*.css (order of index.css)
+├── functions.php        # enqueue fonts/CSS/main.js, register menus, CPTs, theme support
+├── header.php           # <-- components/Header.jsx (+ Layout.jsx skip link)
+├── footer.php           # <-- components/Footer.jsx
+├── front-page.php ... 404.php   # <-- src/pages/* (table above)
+├── template-parts/      # <-- src/components/* (table below)
 ├── assets/js/main.js    # mobile menu toggle (~15 lines)
 └── assets/images/       # replace Unsplash hotlinks (src/content/images.js)
 ```
 
-## 2. Component -> template part
+## 3. Component -> template part
 
-| React component | WordPress file | Data source in WP |
+| React component | Template part | Data source in WP |
 |---|---|---|
-| `Header.jsx` | `header.php` | `wp_nav_menu(['theme_location' => 'primary'])`, Customizer phone |
-| `Hero.jsx` | `template-parts/section-hero.php` | ACF fields on the front page |
-| `About.jsx` | `template-parts/section-about.php` | About page content / ACF |
-| `Services.jsx` | `template-parts/section-services.php` | `WP_Query` on CPT `service` (+ ACF: badge, subtitle, highlights repeater) |
-| `MobileIcu.jsx` | `template-parts/section-micu.php` | ACF (equipment repeater) |
-| `Process.jsx`, `Why.jsx` | `section-process.php`, `section-why.php` | ACF repeaters |
-| `Coverage.jsx` | `section-coverage.php` | ACF (areas repeater) |
-| `Work.jsx` | `section-work.php` | `WP_Query` on CPT `work`, or an ACF gallery |
-| `Quote.jsx` | `section-quote.php` | ACF |
-| `News.jsx` | `section-news.php` | Standard `post` loop; `get_the_date()`, `get_the_excerpt()` |
-| `Faq.jsx` | `section-faq.php` | ACF repeater or CPT `faq` (keeps native `<details>`) |
-| `Careers.jsx` | `section-careers.php` | ACF, or CPT `job` if you want individual listings |
-| `Contact.jsx` | `section-contact.php` | Contact Form 7 / WPForms shortcode replaces the `<form>` |
-| `SectionHead.jsx` | `template-parts/section-head.php` | `get_template_part('template-parts/section-head', null, $args)` |
+| `Layout.jsx`, `Header.jsx`, `Footer.jsx` | `header.php`, `footer.php` | `wp_nav_menu` (Services has a sub-menu of the 5 service CPTs); phone in Customizer |
+| `PageHero.jsx` | `template-parts/page-hero.php` | Page title, excerpt, featured image; breadcrumbs via Yoast/Rank Math |
+| `CtaBand.jsx`, `Stats.jsx`, `SectionHead.jsx`, `Split.jsx` | `template-parts/*.php` | Options page / ACF fields |
+| `Hero.jsx`, `About.jsx`, `MobileIcu.jsx`, `Coverage.jsx`, `Process.jsx`, `Why.jsx`, `Quote.jsx` | `template-parts/section-*.php` | ACF fields / repeaters on the relevant Page |
+| `Services.jsx` | `template-parts/section-services.php` | `WP_Query` on CPT `service` (`limit`, `exclude` props = `posts_per_page`, `post__not_in`) |
+| `Work.jsx` | `template-parts/section-work.php` | `WP_Query` on CPT `work` |
+| `News.jsx` | `template-parts/section-news.php` | Standard post loop; `get_the_date()`, `get_the_excerpt()`, featured image |
+| `Faq.jsx` | `template-parts/section-faq.php` | ACF repeater or CPT `faq` (native `<details>`, no JS) |
+| `CareersBand.jsx` | `template-parts/section-careers.php` | ACF |
+| `ContactInfo.jsx` | `template-parts/contact-info.php` | Customizer / Options page |
+| `ContactForm.jsx`, `ApplyForm.jsx` | shortcodes | Contact Form 7 / WPForms with the same fields |
 
-## 3. Content files -> WordPress data
+## 4. Content files -> WordPress data
 
 | File in `src/content/` | Becomes |
 |---|---|
-| `site.js` | Customizer settings / ACF Options page: phone, fax, email, address, founded year |
-| `site.js` `nav` | Appearance -> Menus (`primary` location). Keep the `#anchor` links, or point them at real pages. |
-| `services.js` | CPT `service` (three levels) + a "Wheelchair" and "Special Events" entry |
-| `about.js`, `hero.js`, `sections.js` | ACF fields on the front page |
+| `site.js` | Customizer / ACF Options: phone, fax, email, address, map URLs, founded year. `nav` -> Appearance -> Menus (`primary`). |
+| `services.js` | CPT `service`: title, excerpt, subtitle, badge, body, `highlights` and `idealFor` repeaters, featured image |
+| `pages.js` | Page banners (title/excerpt/featured image) + ACF for About story/crew/standards, Careers perks/roles |
+| `about.js`, `hero.js`, `sections.js` | ACF fields (front page / About), news posts -> `post`, gallery -> `work` CPT |
 | `images.js` | Media Library uploads (set alt text there) |
 
-## 4. CSS
+## 5. CSS
 
 - Copy `src/styles/*.css` into `style.css` in the order listed in `src/styles/index.css`, under the required theme header comment.
-- Class names are BEM and self-contained, so they will not clash with core. Wrap in a prefix only if you use a page builder that injects generic classes.
-- Tokens live in `tokens.css` `:root`. If you want them in the block editor, mirror them in `theme.json` (`settings.color.palette`, `settings.typography.fontFamilies`).
-- Fonts: enqueue Google Fonts (Space Grotesk, DM Sans) in `functions.php`, or self-host them for GDPR/performance.
+- Class names are BEM and self-contained, so they will not clash with core. `pages.css` holds the inner-page pieces (page hero, split, detail, CTA band).
+- Tokens live in `tokens.css` `:root`. To expose them in the block editor, mirror them in `theme.json` (`settings.color.palette`, `settings.typography.fontFamilies`).
+- Fonts: enqueue Google Fonts (Space Grotesk, DM Sans) in `functions.php`, or self-host them.
 
-## 5. Behavior (JS)
+## 6. Behavior (JS)
 
-Only one piece of real JS exists:
+- **Mobile menu:** toggle `hidden` on `#mobile-menu` and `aria-expanded` on `.menu-toggle`; close on navigation (see `Header.jsx`). This is the only real JS.
+- **Services dropdown:** pure CSS (`:hover` / `:focus-within`), no JS. WordPress adds the `current-menu-item` class instead of the `.active` class React Router sets; restyle `.nav__link.active` accordingly.
+- **Scroll to top on navigation** is automatic in WordPress (full page loads).
 
-- **Mobile menu:** toggle `hidden` on `#mobile-menu` and `aria-expanded` on `.menu-toggle` (see `Header.jsx`).
+## 7. Forms
 
-FAQ uses native `<details>`; smooth scrolling is CSS (`scroll-behavior`, `scroll-padding-top`).
+Both forms are stubs that only show a success message. Replace them with a plugin and keep the fields: contact = name, phone, email, service, message; careers = name, phone, email, position, message, resume upload. Add spam protection and route to `info@txcriticalcare.com`.
 
-## 6. Forms
+## 8. Before launch
 
-`Contact.jsx` posts nowhere. Replace the `<form>` with a plugin shortcode and keep the same fields: name, phone, email, service, message. Add spam protection (reCAPTCHA / honeypot) and route submissions to `info@txcriticalcare.com`.
-
-## 7. Before launch
-
-- Replace Unsplash hotlinks with owned, compressed images (WebP) and real photos of the fleet and crew.
+- Replace Unsplash hotlinks with owned, compressed images (WebP), ideally real photos of the fleet and crew.
 - Replace placeholder news posts and the "Our Work" gallery (the original site's were lorem ipsum).
-- Review the drafted copy in `sections.js` (process, why, FAQ, coverage cities). Only the About, services, equipment, careers and contact details come from the original site.
-- Add SEO (Yoast/Rank Math), `LocalBusiness` schema, and an SSL certificate. **The current txcriticalcare.com certificate has expired.**
+- Review drafted copy: process steps, "why us", FAQ, coverage towns, service "ideal for" lists, careers perks/role descriptions. Only About, service definitions, equipment, licensing, careers intro and contact details come from the original site.
+- The Google Map embed and "View on map" links use the Sugar Land address; the original site linked to a Richmond, TX address. Confirm which is correct.
+- Add SEO (Yoast/Rank Math), `LocalBusiness` schema and a valid SSL certificate. **The current txcriticalcare.com certificate has expired.**

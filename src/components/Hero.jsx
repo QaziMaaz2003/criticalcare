@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { hero } from '../content/hero'
 import { stats } from '../content/about'
 import { site } from '../content/site'
@@ -17,9 +18,9 @@ export default function Hero() {
           </h1>
           <p className="hero__text">{hero.text}</p>
           <div className="hero__actions">
-            <a className="btn btn--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+            <Link className="btn btn--primary" to={hero.primaryCta.to}>{hero.primaryCta.label}</Link>
             <a className="btn btn--outline" href={site.phoneHref}>Call dispatch</a>
-            <a className="btn btn--outline" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+            <Link className="btn btn--outline" to={hero.secondaryCta.to}>{hero.secondaryCta.label}</Link>
           </div>
         </div>
 

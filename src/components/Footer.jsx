@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { site, nav } from '../content/site'
+import { services, servicePath } from '../content/services'
 
 // WordPress: footer.php (wp_footer() before </body>)
 export default function Footer() {
@@ -8,13 +10,13 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <a className="logo" href="#top">
+            <Link className="logo" to="/">
               <span className="logo__mark" aria-hidden="true">TC</span>
               <span className="logo__text">
                 {site.name}
                 <small>Ambulance</small>
               </span>
-            </a>
+            </Link>
             <p className="footer__blurb">{site.tagline}. Serving {site.serviceArea.join(' and ')} since {site.founded}.</p>
           </div>
 
@@ -22,7 +24,17 @@ export default function Footer() {
             <h3>Menu</h3>
             <ul>
               {nav.map((item) => (
-                <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                <li key={item.to}><Link to={item.to}>{item.label}</Link></li>
+              ))}
+              <li><Link to="/faq">FAQ</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Services</h3>
+            <ul>
+              {services.map((s) => (
+                <li key={s.slug}><Link to={servicePath(s)}>{s.title}</Link></li>
               ))}
             </ul>
           </div>

@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom'
 import { careers } from '../content/sections'
-import { site } from '../content/site'
 
-// WordPress: template-parts/section-careers.php
-export default function Careers() {
+// WordPress: template-parts/section-careers.php (homepage teaser for the Careers page)
+export default function CareersBand() {
   return (
-    <section className="section" id="careers">
+    <section className="section">
       <div className="container">
         <div className="careers__box">
           <div>
@@ -20,12 +20,7 @@ export default function Careers() {
                 <li key={r}>{r}</li>
               ))}
             </ul>
-            <a
-              className="btn btn--light"
-              href={`mailto:${site.email}?subject=${encodeURIComponent('Careers enquiry')}`}
-            >
-              Explore careers
-            </a>
+            <Link className="btn btn--light" to="/careers">Explore careers</Link>
           </div>
         </div>
       </div>

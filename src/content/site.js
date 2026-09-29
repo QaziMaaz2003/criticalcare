@@ -1,3 +1,5 @@
+import { services, servicePath } from './services'
+
 // Global site settings.
 // WordPress: becomes Customizer / ACF Options page fields (or theme_mod values).
 export const site = {
@@ -15,19 +17,25 @@ export const site = {
     state: 'Texas',
     zip: '77478',
   },
-  mapUrl:
-    'https://www.google.com/maps/place/1305+Farm+to+Market+359,+Richmond,+TX+77406,+USA/@29.6146675,-95.7452094,19z',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=104+Industrial+Blvd+Suite+B+Sugar+Land+TX+77478',
+  mapEmbed:
+    'https://www.google.com/maps?q=104+Industrial+Blvd+Suite+B,+Sugar+Land,+TX+77478&output=embed',
   serviceArea: ['Fort Bend County', 'Harris County'],
   copyright: 'Texascriticalcare.com',
 }
 
-// Primary navigation. `href` values are in-page anchors (front-page.php sections).
-// WordPress: register as a menu location and build the menu in Appearance > Menus.
+// Primary navigation. `to` values are routes (each is a WordPress page / menu item).
+// WordPress: build in Appearance > Menus and register a `primary` location.
 export const nav = [
-  { label: 'Home', href: '#top' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Our Services', href: '#services' },
-  { label: 'Our Work', href: '#work' },
-  { label: 'Contact Us', href: '#contact' },
-  { label: 'Careers', href: '#careers' },
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about-us' },
+  {
+    label: 'Services',
+    to: '/services',
+    children: services.map((s) => ({ label: s.title, to: servicePath(s) })),
+  },
+  { label: 'Our Work', to: '/our-work' },
+  { label: 'News', to: '/news' },
+  { label: 'Careers', to: '/careers' },
+  { label: 'Contact Us', to: '/contact-us' },
 ]

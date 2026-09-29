@@ -4,14 +4,11 @@ export const hero = {
   title: ['Critical care transport,', 'handled with ', 'precision.'],
   text:
     'Texas Critical Care provides MICU, Advanced and Basic Life Support ambulance transport for Fort Bend and Harris County, staffed by certified medics.',
-  primaryCta: { label: 'Request transport', href: '#contact' },
-  secondaryCta: { label: 'Explore services', href: '#services' },
+  primaryCta: { label: 'Request transport', to: '/contact-us' },
+  secondaryCta: { label: 'Explore services', to: '/services' },
 }
 
 export const contact = {
-  eyebrow: 'Contact Us',
-  title: 'Request transport or ask a question.',
-  text: 'Tell us what you need and our team will call you back. For urgent transfers, call dispatch directly.',
   serviceOptions: [
     'MICU – Mobile Intensive Care Unit',
     'ALS – Advanced Life Support',

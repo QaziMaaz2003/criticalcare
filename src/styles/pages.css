@@ -1,0 +1,95 @@
+/* ---------- Skip link ---------- */
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; padding: 0.7rem 1.1rem; border-radius: 0.6rem; background: var(--color-fg); color: #fff; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Page hero (inner-page banner) ---------- */
+.page-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--color-dark); color: var(--color-dark-fg); padding-block: clamp(3.5rem, 9vw, 6.5rem); }
+.page-hero__img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; }
+.page-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, oklch(24% 0.04 190 / 0.95) 15%, oklch(24% 0.04 190 / 0.55) 70%, oklch(24% 0.04 190 / 0.35)); }
+.page-hero__inner { max-width: 48rem; margin-left: max(var(--gutter), calc((100% - var(--container)) / 2)); }
+.page-hero h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); }
+.page-hero .eyebrow { color: oklch(78% 0.13 27); }
+.page-hero .lead { color: oklch(88% 0.02 170); max-width: 38rem; margin: 0; }
+.crumbs { margin-bottom: 1.25rem; font-size: 0.85rem; color: oklch(82% 0.02 170); }
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs [aria-current] { color: #fff; font-weight: 600; }
+
+/* ---------- Generic sections ---------- */
+.section__more { margin: 2.5rem 0 0; }
+.section__more--center { text-align: center; }
+.split { display: grid; gap: 2.5rem; align-items: center; }
+.split__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.split__text .check-list { margin-top: 1.25rem; }
+.section--dark .split__text .check-list li::before { border-color: oklch(78% 0.13 27); }
+@media (min-width: 60rem) {
+  .split { grid-template-columns: 1fr 1fr; gap: 4.5rem; }
+  .split--reverse .split__img { order: -1; }
+}
+
+.stats-band { background: var(--color-primary); color: #fff; padding-block: 2.5rem; }
+.stats-band__grid { display: grid; gap: 1.5rem; text-align: center; }
+.stats-band__value { display: block; font: 700 clamp(2rem, 5vw, 3rem)/1 var(--font-display); }
+.stats-band__label { display: block; margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.9; }
+@media (min-width: 40rem) { .stats-band__grid { grid-template-columns: repeat(3, 1fr); } }
+
+.cta-band { display: grid; gap: 1.5rem; align-items: center; padding: clamp(2rem, 5vw, 3.5rem); border-radius: var(--radius-lg); background: var(--color-dark); color: var(--color-dark-fg); }
+.cta-band h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); margin-bottom: 0.4rem; }
+.cta-band p { margin: 0; color: oklch(85% 0.02 170); }
+.cta-band__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+@media (min-width: 60rem) { .cta-band { grid-template-columns: 1fr auto; gap: 3rem; } }
+
+/* ---------- Services extras ---------- */
+.service-card__link { margin-top: 1.25rem; font-weight: 600; text-decoration: none; color: var(--color-primary); }
+.service-card__link:hover { text-decoration: underline; }
+.service-card .check-list { margin-bottom: 0; }
+.service-card--cta { justify-content: center; background: var(--color-primary); color: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.service-card--cta p { color: rgb(255 255 255 / 0.9); }
+.service-card--cta .btn { align-self: flex-start; }
+
+/* ---------- Service detail ---------- */
+.detail { display: grid; gap: 2.5rem; align-items: start; }
+.detail__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 2rem; box-shadow: var(--shadow); }
+.detail__sub { font-size: 1.5rem; margin-top: 2rem; }
+.detail__main > p { font-size: 1.08rem; }
+.detail__box { padding: 1.75rem; }
+.detail__box + .detail__box { margin-top: 1rem; }
+.detail__box .btn + .btn { margin-top: 0.6rem; }
+.detail__box--cta { background: var(--color-accent); }
+@media (min-width: 60rem) {
+  .detail { grid-template-columns: 1.6fr 1fr; gap: 3.5rem; }
+  .detail__aside { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+}
+
+/* ---------- News / gallery ---------- */
+.news-card { overflow: hidden; padding: 0; }
+.news-card__img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; }
+.news-card__body { padding: 1.75rem; }
+.gallery__item:nth-child(3n + 1) { aspect-ratio: 1 / 1.25; }
+@media (min-width: 60rem) { .gallery__item { aspect-ratio: 1 / 1.1; } .gallery__item:nth-child(3n + 1) { aspect-ratio: 1 / 1.1; } }
+
+/* ---------- Careers ---------- */
+.careers-intro { max-width: 52rem; }
+.careers-intro .lead { color: var(--color-fg); }
+.why__grid--three { grid-template-columns: 1fr; }
+@media (min-width: 48rem) { .why__grid--three { grid-template-columns: repeat(3, 1fr); } }
+.positions { display: grid; gap: 1.25rem; }
+.position { padding: 1.75rem; }
+.position p { color: var(--color-muted-fg); }
+.position__link { font-weight: 600; text-decoration: none; color: var(--color-primary); }
+.position__link:hover { text-decoration: underline; }
+@media (min-width: 48rem) { .positions { grid-template-columns: repeat(3, 1fr); } }
+.apply { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 60rem) { .apply { grid-template-columns: 0.85fr 1.15fr; gap: 3.5rem; } }
+.field input[type='file'] { padding: 0.65rem 0.8rem; }
+
+/* ---------- Contact ---------- */
+.dispatch { display: grid; gap: 1.25rem; align-items: center; padding: 1.75rem 2rem; margin-bottom: 1.5rem; border-color: oklch(53% 0.18 27 / 0.3); }
+.dispatch h2 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+.dispatch p { margin: 0; color: var(--color-muted-fg); }
+@media (min-width: 48rem) { .dispatch { grid-template-columns: 1fr auto; } }
+.map iframe { display: block; width: 100%; height: clamp(18rem, 40vw, 26rem); border: 0; filter: grayscale(0.2); }
+
+/* ---------- 404 ---------- */
+.not-found { max-width: 36rem; text-align: center; padding-block: 3rem; }
+.not-found__code { display: block; margin-bottom: 0.5rem; font: 700 clamp(4rem, 12vw, 7rem)/1 var(--font-display); color: var(--color-primary); }

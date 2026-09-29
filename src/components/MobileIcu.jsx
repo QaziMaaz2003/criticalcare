@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import { mobileIcu } from '../content/about'
 import { images } from '../content/images'
 
 // WordPress: template-parts/section-micu.php
-export default function MobileIcu() {
+export default function MobileIcu({ link = false }) {
   return (
     <section className="section section--dark micu">
       <div className="container micu__grid">
@@ -15,6 +16,7 @@ export default function MobileIcu() {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          {link && <Link className="btn btn--light" to="/services/micu">About MICU transport</Link>}
         </div>
         <img className="micu__img" src={images.micu.src} alt={images.micu.alt} loading="lazy" />
       </div>

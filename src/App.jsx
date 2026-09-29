@@ -1,40 +1,37 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import MobileIcu from './components/MobileIcu'
-import Process from './components/Process'
-import Why from './components/Why'
-import Coverage from './components/Coverage'
-import Work from './components/Work'
-import Quote from './components/Quote'
-import News from './components/News'
-import Faq from './components/Faq'
-import Careers from './components/Careers'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import About from './pages/About'
+import Services from './pages/Services'
+import ServiceDetail from './pages/ServiceDetail'
+import OurWork from './pages/OurWork'
+import News from './pages/News'
+import Careers from './pages/Careers'
+import Contact from './pages/Contact'
+import FaqPage from './pages/FaqPage'
+import NotFound from './pages/NotFound'
 
-// Section order == front-page.php in the WordPress theme.
+// Route -> WordPress template:
+//   /                  front-page.php        /services/:slug  single-service.php
+//   /about-us          page-about-us.php     /our-work        archive-work.php
+//   /services          archive-service.php   /news            home.php
+//   /careers           page-careers.php      /contact-us      page-contact-us.php
+//   /faq               page-faq.php          *                404.php
 export default function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <MobileIcu />
-        <Process />
-        <Why />
-        <Coverage />
-        <Work />
-        <Quote />
-        <News />
-        <Faq />
-        <Careers />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about-us" element={<About />} />
+        <Route path="services" element={<Services />} />
+        <Route path="services/:slug" element={<ServiceDetail />} />
+        <Route path="our-work" element={<OurWork />} />
+        <Route path="news" element={<News />} />
+        <Route path="careers" element={<Careers />} />
+        <Route path="contact-us" element={<Contact />} />
+        <Route path="faq" element={<FaqPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }
