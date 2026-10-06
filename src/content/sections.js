@@ -41,12 +41,12 @@ export const work = {
     { key: 'wheelchair', caption: 'Wheelchair transport' },
     { key: 'events', caption: 'Special event standby' },
     { key: 'caregiver', caption: 'Compassionate care' },
-    { key: 'fleet', caption: 'Rapid response' },
     { key: 'clinician', caption: 'Clinical excellence' },
-    { key: 'ambulanceRoad', caption: 'On the road' },
+    { key: 'fleet', caption: 'Unit M-19 MICU side profile' },
+    { key: 'ambulanceNight', caption: 'Unit M-21 Texas Star safety wrap' },
     { key: 'team', caption: 'Our team' },
-    { key: 'interior2', caption: 'Equipped for care' },
-    { key: 'ambulanceNight', caption: 'Day and night' },
+    { key: 'ambulanceRoad', caption: 'Unit M-21 on the road' },
+    { key: 'm19Rear', caption: 'Unit M-19 rear safety chevrons' },
   ],
 }
 
