@@ -20,6 +20,7 @@
 .section__more--center { text-align: center; }
 .split { display: grid; gap: 2.5rem; align-items: center; }
 .split__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.split__img--wide { aspect-ratio: 16 / 10; }
 .split__img--portrait { aspect-ratio: 4 / 5; max-width: 28rem; justify-self: center; }
 .split__text .check-list { margin-top: 1.25rem; }
 .section--dark .split__text .check-list li::before { border-color: oklch(78% 0.13 27); }

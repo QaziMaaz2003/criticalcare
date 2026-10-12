@@ -37,11 +37,12 @@ export default function Contact() {
       <Process data={contactExtra.steps} />
 
       <Split
+        wide
         eyebrow={contactExtra.prepare.eyebrow}
         title={contactExtra.prepare.title}
         text={contactExtra.prepare.text}
         points={contactExtra.prepare.points}
-        image={contactExtra.prepare.image}
+        image="hero"
         reverse
       />
 
