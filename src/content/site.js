@@ -20,7 +20,9 @@ export const site = {
   mapUrl: 'https://www.google.com/maps/search/?api=1&query=104+Industrial+Blvd+Suite+B+Sugar+Land+TX+77478',
   mapEmbed:
     'https://www.google.com/maps?q=104+Industrial+Blvd+Suite+B,+Sugar+Land,+TX+77478&output=embed',
-  serviceArea: ['Fort Bend County', 'Harris County'],
+  // Counties first (these render as the highlighted chips), then cities in content/sections.js.
+  serviceArea: ['Fort Bend County', 'Harris County', 'Montgomery County', 'Galveston County', 'Brazoria County'],
+  serviceAreaText: 'Fort Bend, Harris, Montgomery, Galveston and Brazoria Counties',
   copyright: 'Texascriticalcare.com',
 }
 

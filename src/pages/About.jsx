@@ -24,7 +24,7 @@ export default function About() {
       <Stats />
       <MissionVision />
       <Split dark eyebrow={standards.eyebrow} title={standards.title} text={standards.text} points={standards.points} image={standards.image} reverse />
-      <Split eyebrow={crew.eyebrow} title={crew.title} text={crew.text} points={crew.roles} image={crew.image} />
+      <Split portrait eyebrow={crew.eyebrow} title={crew.title} text={crew.text} points={crew.roles} image={crew.image} />
       <Why />
       <Split eyebrow={fleet.eyebrow} title={fleet.title} text={fleet.text} points={fleet.points} image={fleet.image} reverse />
       <IconGrid {...audiences} muted />

@@ -1,7 +1,7 @@
 import { images } from '../content/images'
 
-// WordPress: template-parts/split.php (image + text block). Props: eyebrow, title, text, points, roles, image, reverse, dark
-export default function Split({ eyebrow, title, text, points = [], image, reverse = false, dark = false, children }) {
+// WordPress: template-parts/split.php (image + text block). Props: eyebrow, title, text, points, roles, image, reverse, dark, portrait (for portrait photos)
+export default function Split({ eyebrow, title, text, points = [], image, reverse = false, dark = false, portrait = false, children }) {
   const img = images[image]
   return (
     <section className={`section${dark ? ' section--dark' : ''}`}>
@@ -19,7 +19,7 @@ export default function Split({ eyebrow, title, text, points = [], image, revers
           )}
           {children}
         </div>
-        {img && <img className="split__img" src={img.src} alt={img.alt} loading="lazy" />}
+        {img && <img className={`split__img${portrait ? ' split__img--portrait' : ''}`} src={img.src} alt={img.alt} loading="lazy" />}
       </div>
     </section>
   )

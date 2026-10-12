@@ -34,7 +34,6 @@ export default function Hero() {
               <strong>{site.phone}</strong>
             </span>
           </a>
-          <img className="hero__accent" src={images.medic.src} alt="" loading="lazy" />
           <ul className="hero__stats">
             {stats.map((s) => (
               <li key={s.label} className="stat card">

@@ -84,7 +84,8 @@ Both forms are stubs that only show a success message. Replace them with a plugi
 
 ## 8. Before launch
 
-- Replace Unsplash hotlinks with owned, compressed images (WebP), ideally real photos of the fleet and crew.
+- Real fleet photos live in `public/fleet/` (`bus.jpeg` = home hero, `m19-*` / `m21-*` = Units M-19 and M-21). Upload them to the Media Library. They are small files (about 300-500px wide), so use the originals if you have them. Everything else is still an Unsplash hotlink: replace it with owned, compressed images (WebP).
+- Gallery: tiles are ordered so wide photos sit in wide slots (see the notes above `.gallery` in `enhance.css`). Keep exactly 12 tiles, or re-check the span pattern.
 - Replace the sample news articles (`articles.js`, educational drafts) and the "Our Work" gallery with real posts and photos (the original site's were lorem ipsum).
 - Review drafted copy: audiences, values/mission wording, comparison table, service FAQs, full FAQ page, careers requirements and hiring steps, news articles, process steps, "why us", FAQ, coverage towns, service "ideal for" lists, careers perks/role descriptions. Only About, service definitions, equipment, licensing, careers intro and contact details come from the original site.
 - The Google Map embed and "View on map" links use the Sugar Land address; the original site linked to a Richmond, TX address. Confirm which is correct.

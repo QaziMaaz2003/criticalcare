@@ -5,7 +5,7 @@ import { images } from '../content/images'
 
 // WordPress: template-parts/section-work.php (WP_Query for post_type=work)
 export default function Work({ limit, head = true, muted = true }) {
-  const items = limit ? work.items.slice(0, limit) : work.items
+  const items = limit ? work.items.filter((i) => i.home).slice(0, limit) : work.items
   return (
     <section className={`section${muted ? ' section--muted' : ''}`}>
       <div className="container">

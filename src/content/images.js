@@ -4,9 +4,10 @@ const u = (id, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`
 
 export const images = {
-  hero: { src: '/fleet/m19-front.jpg', alt: 'Texas Critical Care MICU Unit M-19 ambulance front view' },
+  hero: { src: '/fleet/bus.jpeg', alt: 'Texas Critical Care MICU Unit M-19 ambulance, front three-quarter view' },
+  m19Front: { src: '/fleet/m19-front.jpg', alt: 'Texas Critical Care MICU Unit M-19 ambulance front view' },
   about: { src: u('1516841273335-e39b37888115', 1000), alt: 'Medical team walking down a bright hospital corridor' },
-  micu: { src: u('1696243144290-792f1f48339e', 1200), alt: 'Interior of an ambulance with stretcher, monitors and medical equipment' },
+  micu: { src: '/fleet/m19-rear.jpg', alt: 'Texas Critical Care Unit M-19 rear patient loading doors with safety chevrons' },
   crew: { src: u('1634025130850-1d24389e25c7', 900), alt: 'Two medics loading a stretcher into the back of an ambulance' },
   response: { src: u('1649260257572-91bf6f94cff6', 1000), alt: 'Paramedics giving emergency care to a patient' },
   wheelchair: { src: u('1732194438396-394d2b7c2436', 1000), alt: 'Smiling man seated in a wheelchair at home' },
@@ -22,6 +23,7 @@ export const images = {
   ambulanceCity: { src: '/fleet/m21-angle.jpg', alt: 'Texas Critical Care Unit M-21 ambulance on standby for transport dispatch' },
   ambulanceRoad: { src: '/fleet/m21-side.jpg', alt: 'Texas Critical Care Unit M-21 ambulance side profile' },
   ambulanceNight: { src: '/fleet/m21-rear.jpg', alt: 'Texas Critical Care Unit M-21 rear doors with Texas Star high-visibility safety chevrons' },
+  m21Front: { src: '/fleet/m21-front.jpg', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },
   m19Rear: { src: '/fleet/m19-rear.jpg', alt: 'Texas Critical Care Unit M-19 rear patient loading doors with safety chevrons' },
   team: { src: u('1755189118414-14c8dacdb082', 1000), alt: 'Three healthcare workers standing together in a clinic' },
   scrubs: { src: u('1594824476967-48c8b964273f', 900), alt: 'Smiling healthcare professional in teal scrubs' },

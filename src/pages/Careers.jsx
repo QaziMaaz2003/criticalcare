@@ -65,7 +65,7 @@ export default function Careers() {
       <Process data={process} />
 
       <section className="strip" aria-label="Photos of our team and fleet">
-        {['team', 'ambulanceRoad', 'scrubs', 'crew'].map((k) => (
+        {['scrubs', 'm21Front', 'crew', 'ambulanceNight'].map((k) => (
           <img key={k} src={images[k].src} alt={images[k].alt} loading="lazy" />
         ))}
       </section>

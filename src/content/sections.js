@@ -25,27 +25,30 @@ export const why = {
 
 export const coverage = {
   eyebrow: 'Coverage',
-  title: 'Serving Fort Bend and Harris County.',
+  title: 'Serving five Texas counties.',
   text: 'Based in Sugar Land, our units respond across the Greater Houston area and transfer patients between facilities.',
-  areas: ['Sugar Land', 'Richmond', 'Missouri City', 'Houston', 'Fort Bend County', 'Harris County'],
+  areas: ['Sugar Land', 'Richmond', 'Missouri City', 'Houston'],
 }
 
 // Placeholder gallery: the live site's "Our Work" items are lorem ipsum.
+// Gallery tiles. Order matters on desktop: tiles 1 and 8 are wide (landscape photos), 3 and 9 are tall
+// (portrait photos); see the gallery notes in styles/enhance.css. `home: true` tiles suit the small
+// square preview on the homepage.
 export const work = {
   eyebrow: 'Our Work',
   title: 'Care in motion.',
   items: [
-    { key: 'response', caption: 'Emergency response' },
-    { key: 'crew', caption: 'Crew & fleet' },
-    { key: 'micu', caption: 'MICU interior' },
-    { key: 'wheelchair', caption: 'Wheelchair transport' },
-    { key: 'events', caption: 'Special event standby' },
-    { key: 'caregiver', caption: 'Compassionate care' },
-    { key: 'clinician', caption: 'Clinical excellence' },
     { key: 'fleet', caption: 'Unit M-19 MICU side profile' },
+    { key: 'response', caption: 'Emergency response', home: true },
     { key: 'ambulanceNight', caption: 'Unit M-21 Texas Star safety wrap' },
-    { key: 'team', caption: 'Our team' },
+    { key: 'm19Front', caption: 'Unit M-19 front view', home: true },
+    { key: 'events', caption: 'Special event standby' },
+    { key: 'wheelchair', caption: 'Wheelchair transport', home: true },
+    { key: 'interior2', caption: 'MICU interior' },
     { key: 'ambulanceRoad', caption: 'Unit M-21 on the road' },
+    { key: 'scrubs', caption: 'Our medics' },
+    { key: 'ambulanceCity', caption: 'Unit M-21 on standby', home: true },
+    { key: 'caregiver', caption: 'Compassionate care' },
     { key: 'm19Rear', caption: 'Unit M-19 rear safety chevrons' },
   ],
 }

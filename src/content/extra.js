@@ -8,7 +8,7 @@ export const trust = [
   { icon: 'shield', title: 'DSHS licensed', text: 'Texas MICU provider license' },
   { icon: 'award', title: 'ACLS protocols', text: 'Current emergency guidelines' },
   { icon: 'users', title: 'Certified medics', text: 'EMTs, intermediates, paramedics' },
-  { icon: 'pin', title: 'Local coverage', text: 'Fort Bend & Harris County' },
+  { icon: 'pin', title: 'Local coverage', text: 'Five Greater Houston counties' },
 ]
 
 // Drafted
@@ -72,7 +72,7 @@ export const fleet = {
 export const location = {
   eyebrow: 'Find us',
   title: 'Based in Sugar Land, serving the region.',
-  text: 'Our base is at 104 Industrial Blvd Suite B, Sugarland, Texas 77478. Crews cover Fort Bend and Harris County and can transfer patients between facilities.',
+  text: 'Our base is at 104 Industrial Blvd Suite B, Sugarland, Texas 77478. Crews cover Fort Bend, Harris, Montgomery, Galveston and Brazoria Counties and can transfer patients between facilities.',
 }
 
 // Work page
@@ -99,7 +99,7 @@ export const careersExtra = {
   intro: {
     eyebrow: 'Life at Texas Critical Care',
     title: 'A team that makes a difference in others’ lives.',
-    text: 'We are a Texas DSHS licensed MICU provider that has served Fort Bend and Harris County since 2008. Our people work with modern equipment, current protocols and colleagues who care about the patient in front of them.',
+    text: 'We are a Texas DSHS licensed MICU provider that has served Fort Bend, Harris, Montgomery, Galveston and Brazoria Counties since 2008. Our people work with modern equipment, current protocols and colleagues who care about the patient in front of them.',
     image: 'team',
   },
   qualities: {
@@ -229,7 +229,7 @@ export const faqGroups = [
       { q: 'Who can request a transport?', a: 'Hospitals, facilities, physicians, families and event organizers can contact our dispatch team to request transport or standby coverage.' },
       { q: 'What information do you need?', a: 'The patient’s pickup and destination, their condition and the level of care required (MICU, ALS, BLS or wheelchair), plus a contact number.' },
       { q: 'How quickly can a crew be dispatched?', a: 'Our staff and fleet are prepared so that we can dispatch to any call within minutes of a confirmed request.' },
-      { q: 'Which areas do you serve?', a: 'We serve Fort Bend and Harris County, Texas. Call dispatch to discuss destinations beyond our usual area.' },
+      { q: 'Which areas do you serve?', a: 'We serve Fort Bend, Harris, Montgomery, Galveston and Brazoria Counties, Texas. Call dispatch to discuss destinations beyond our usual area.' },
     ],
   },
   {

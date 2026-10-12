@@ -24,7 +24,7 @@ export const articles = [
     category: 'Guides',
     date: '2026-08-28',
     readTime: '2 min read',
-    image: 'ambulanceCity',
+    image: 'ambulanceRoad',
     excerpt: 'What to have ready when you call so that dispatch can confirm the right crew quickly.',
     body: [
       'Requesting a transfer is simple when you have the key details to hand. Our dispatch team will ask for the patient’s name and date of birth, the pickup location and room number, the destination facility and accepting physician, and a callback number.',
@@ -38,7 +38,7 @@ export const articles = [
     category: 'About MICU',
     date: '2026-08-10',
     readTime: '3 min read',
-    image: 'ambulanceRoad',
+    image: 'hero',
     excerpt: 'Why the MICU license is the highest provider license in Texas and what it means for patients.',
     body: [
       'A Mobile Intensive Care Unit is an ambulance configured and staffed to deliver intensive care during transport.',

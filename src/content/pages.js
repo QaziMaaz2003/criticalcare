@@ -5,7 +5,7 @@ export const pageHeroes = {
   about: {
     eyebrow: 'About Us',
     title: 'Quality lifesaving transport since 2008.',
-    text: 'A licensed Mobile Intensive Care Unit provider serving Fort Bend and Harris County.',
+    text: 'A licensed Mobile Intensive Care Unit provider serving Fort Bend, Harris, Montgomery, Galveston and Brazoria Counties.',
     image: 'clinician',
   },
   services: {
@@ -68,7 +68,7 @@ export const standards = {
   text:
     'Texas Critical Care is licensed by the Texas Department of State Health Services as a "Mobile Intensive Care Unit". It is the highest level provider license that can be obtained, and a rarity among hundreds of ambulance providers in South East Texas. We meet all standards for emergency response protocols set by the State and City authorities.',
   points: ['Texas DSHS licensed MICU provider', 'State and City emergency response protocols', 'ACLS-guideline emergency medications', 'Well maintained, fully equipped fleet'],
-  image: 'ambulanceRoad',
+  image: 'ambulanceCity',
 }
 
 // Careers page (copy other than the intro/roles is drafted)

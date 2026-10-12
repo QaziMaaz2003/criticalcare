@@ -12,7 +12,7 @@ export const about = {
 export const stats = [
   { value: '2008', label: 'Serving Texas since' },
   { value: 'MICU', label: 'Highest DSHS provider license' },
-  { value: '2', label: 'Counties served' },
+  { value: '5', label: 'Counties served' },
 ]
 
 export const mobileIcu = {

@@ -1,7 +1,7 @@
 /* ---------- About ---------- */
 .about__grid { display: grid; gap: 2.5rem; align-items: center; }
 .about__media { position: relative; }
-.about__img { width: 100%; aspect-ratio: 4 / 4.4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.about__img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
 .about__since { position: absolute; left: -0.5rem; bottom: 1.5rem; padding: 1rem 1.4rem; background: var(--color-primary); color: #fff; border-radius: var(--radius); font: 700 2rem/1 var(--font-display); box-shadow: var(--shadow); }
 .about__since small { display: block; margin-bottom: 0.25rem; font: 500 0.7rem/1 var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
 @media (min-width: 60rem) { .about__grid { grid-template-columns: 0.9fr 1.1fr; gap: 4.5rem; } }
@@ -27,7 +27,8 @@
 
 /* ---------- Mobile ICU ---------- */
 .micu__grid { display: grid; gap: 2.5rem; align-items: center; }
-.micu__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); }
+/* The MICU photo is a near-square shot (rear of Unit M-19): show it uncropped and cap its size so the low-res file is not over-enlarged. */
+.micu__img { display: block; width: min(100%, 26rem); aspect-ratio: 1 / 1; margin-inline: auto; object-fit: cover; border-radius: var(--radius-lg); }
 .micu .check-list li::before { border-color: oklch(78% 0.13 27); }
 @media (min-width: 60rem) { .micu__grid { grid-template-columns: 1fr 1fr; gap: 4.5rem; } }
 

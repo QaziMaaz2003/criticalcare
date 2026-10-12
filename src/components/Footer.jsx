@@ -17,7 +17,7 @@ export default function Footer() {
                 <small>Ambulance</small>
               </span>
             </Link>
-            <p className="footer__blurb">{site.tagline}. Serving {site.serviceArea.join(' and ')} since {site.founded}.</p>
+            <p className="footer__blurb">{site.tagline}. Serving {site.serviceAreaText} since {site.founded}.</p>
           </div>
 
           <div>

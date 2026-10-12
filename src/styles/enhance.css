@@ -25,10 +25,8 @@
 .hero__float strong { font: 700 1rem/1.2 var(--font-display); }
 .hero__float-icon { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--color-primary); color: #fff; animation: pulse 2.4s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 oklch(53% 0.18 27 / 0.5); } 70% { box-shadow: 0 0 0 12px oklch(53% 0.18 27 / 0); } 100% { box-shadow: 0 0 0 0 oklch(53% 0.18 27 / 0); } }
-.hero__accent { display: none; }
 @media (min-width: 64rem) {
   .hero__float { left: -1.75rem; top: 2.25rem; }
-  .hero__accent { display: block; position: absolute; right: -1rem; top: -1.25rem; width: 7.5rem; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 5px solid var(--color-bg); box-shadow: var(--shadow); }
 }
 @media (prefers-reduced-motion: reduce) { .hero__float-icon { animation: none; } .reveal { opacity: 1; transform: none; } }
 
@@ -62,7 +60,7 @@
 
 /* ---------- About: collage + mission ---------- */
 .about__media { padding-bottom: 2.5rem; }
-.about__img2 { position: absolute; right: 0.5rem; bottom: 0; width: 46%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 6px solid var(--color-bg); box-shadow: var(--shadow); }
+.about__img2 { position: absolute; right: 0.5rem; bottom: 0; width: 42%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius); border: 6px solid var(--color-bg); box-shadow: var(--shadow); }
 @media (min-width: 60rem) { .about__img2 { right: -1.5rem; } }
 .mv { display: grid; gap: 1.25rem; margin-bottom: 1.25rem; }
 .mv__card { padding: 2.25rem; border-radius: var(--radius-lg); background: var(--color-primary); color: #fff; }
@@ -113,7 +111,7 @@
 
 /* ---------- Article ---------- */
 .article { max-width: 50rem; }
-.article__img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); margin-bottom: 2.25rem; }
+.article__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); margin-bottom: 2.25rem; }
 .article__body { font-size: 1.1rem; line-height: 1.8; }
 .article__body .lead { font-size: 1.3rem; color: var(--color-fg); font-weight: 500; }
 .article__cta { margin-top: 2.5rem; padding: 1.75rem; background: var(--color-accent); }
@@ -137,20 +135,27 @@
 @media (min-width: 48rem) { .strip { grid-template-columns: repeat(4, 1fr); } }
 .strip + .section { margin-top: var(--section-y); }
 
-/* ---------- Gallery: varied tile sizes ----------
-   The gallery has 12 tiles. On desktop, tiles 1 and 8 are wide and 3 and 9 are tall, which fills the
-   4-column grid with no gaps. Tablet (3 cols) and mobile (2 cols) divide evenly, so no spans there.
-   If you change the number of gallery items, revisit this pattern. */
-.gallery { grid-auto-flow: dense; grid-auto-rows: 13rem; }
+/* ---------- Gallery: tiles sized to suit the photos ----------
+   The gallery has 12 tiles. Wide landscape photos (ambulance side profiles) go in the wide slots and
+   portrait photos in the tall slots, so vehicles are not cropped. The span patterns below are
+   hole-free for exactly 12 tiles. If you add or remove tiles, or reorder them, re-check them.
+     mobile (2 cols):  tiles 1 and 8 span 2 columns
+     tablet (3 cols):  tiles 1, 5 and 8 span 2 columns
+     desktop (4 cols): tiles 1 and 8 span 2 columns; tiles 3 and 9 span 2 rows */
+.gallery { grid-auto-flow: dense; grid-auto-rows: 9.5rem; }
 .gallery__item, .gallery__item:nth-child(3n + 1) { aspect-ratio: auto; height: 100%; }
-@media (min-width: 48rem) { .gallery { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 15rem; } }
+.gallery:not(.gallery--compact) .gallery__item:nth-child(1),
+.gallery:not(.gallery--compact) .gallery__item:nth-child(8) { grid-column: span 2; }
+@media (min-width: 48rem) {
+  .gallery { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 15rem; }
+  .gallery:not(.gallery--compact) .gallery__item:nth-child(5) { grid-column: span 2; }
+}
 @media (min-width: 64rem) {
   .gallery { grid-template-columns: repeat(4, 1fr); }
-  .gallery:not(.gallery--compact) .gallery__item:nth-child(1),
-  .gallery:not(.gallery--compact) .gallery__item:nth-child(8) { grid-column: span 2; }
+  .gallery:not(.gallery--compact) .gallery__item:nth-child(5) { grid-column: auto; }
   .gallery:not(.gallery--compact) .gallery__item:nth-child(3),
   .gallery:not(.gallery--compact) .gallery__item:nth-child(9) { grid-row: span 2; }
-  .gallery--compact { grid-auto-rows: 17rem; }
+  .gallery--compact { grid-auto-rows: 14.5rem; }
 }
 
 /* ---------- Contact / dispatch ---------- */

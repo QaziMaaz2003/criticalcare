@@ -11,7 +11,7 @@ export const services = [
     badge: 'M',
     title: 'MICU',
     subtitle: 'Mobile Intensive Care Unit',
-    image: 'micu',
+    image: 'hero',
     excerpt:
       'Transfers of critical care patients between facilities, as per the Texas Department of State Health Services.',
     body: [
@@ -43,7 +43,7 @@ export const services = [
     badge: 'B',
     title: 'BLS',
     subtitle: 'Basic Life Support',
-    image: 'crew',
+    image: 'ambulanceCity',
     excerpt:
       'Fully equipped ambulances staffed by two highly trained, state licensed medics for non-invasive inter-facility transports.',
     body: [
