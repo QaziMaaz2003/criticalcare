@@ -4,9 +4,13 @@ import { images } from '../content/images'
 // WordPress: template-parts/page-hero.php (args: eyebrow, title, text, image, crumbs)
 export default function PageHero({ eyebrow, title, text, image, crumbs = [] }) {
   const img = images[image]
+  // Transparent cut-out vehicles sit on the banner at full strength; photos fill it as a dimmed backdrop.
+  const isCutout = Boolean(img && img.src.includes('/cutouts/'))
   return (
     <section className="page-hero">
-      {img && <img className="page-hero__img" src={img.src} alt="" />}
+      {img && (isCutout
+        ? <img className="page-hero__vehicle" src={img.src} alt="" />
+        : <img className="page-hero__img" src={img.src} alt="" />)}
       <div className="container page-hero__inner">
         <nav className="crumbs" aria-label="Breadcrumb">
           <Link to="/">Home</Link>

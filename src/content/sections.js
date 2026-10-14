@@ -38,9 +38,9 @@ export const work = {
   eyebrow: 'Our Work',
   title: 'Care in motion.',
   items: [
-    { key: 'fleet', caption: 'Unit M-19 MICU side profile' },
+    { key: 'fleet', caption: 'Unit M-19 MICU' },
     { key: 'response', caption: 'Emergency response', home: true },
-    { key: 'ambulanceNight', caption: 'Unit M-21 Texas Star safety wrap' },
+    { key: 'ambulanceNight', caption: 'Unit M-21 front view' },
     { key: 'm19Front', caption: 'Unit M-19 front view', home: true },
     { key: 'events', caption: 'Special event standby' },
     { key: 'wheelchair', caption: 'Wheelchair transport', home: true },
