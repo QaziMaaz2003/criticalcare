@@ -44,4 +44,4 @@ docs/
 
 Design rules that keep the WordPress move cheap: plain CSS with BEM class names and CSS variables (no Tailwind or CSS-in-JS), no text hard-coded in components, one route per WordPress template, and minimal JavaScript. See [docs/WORDPRESS-MIGRATION.md](docs/WORDPRESS-MIGRATION.md).
 
-> Hosting the built site needs a rewrite of all routes to `index.html` (SPA fallback). This is not needed once the site is a WordPress theme.
+> Hosting the built site needs a rewrite of all routes to `index.html` (SPA fallback), otherwise reloading any page other than `/` shows a 404. `vercel.json` does this on Vercel; on Netlify add `/* /index.html 200` to `public/_redirects`. This is not needed once the site is a WordPress theme.
