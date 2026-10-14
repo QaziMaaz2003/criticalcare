@@ -23,6 +23,7 @@ export const site = {
   // Counties first (these render as the highlighted chips), then cities in content/sections.js.
   serviceArea: ['Fort Bend County', 'Harris County', 'Montgomery County', 'Galveston County', 'Brazoria County'],
   serviceAreaText: 'Fort Bend, Harris, Montgomery, Galveston and Brazoria Counties',
+  logo: '/logo.png', // transparent PNG (974x296)
   copyright: 'Texascriticalcare.com',
 }
 

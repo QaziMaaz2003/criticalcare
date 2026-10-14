@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { site, nav } from '../content/site'
+import Logo from './Logo'
 
 // WordPress: header.php (wp_nav_menu with a sub-menu for Services). Menu toggle -> main.js
 export default function Header() {
@@ -13,13 +14,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container header__inner">
-        <Link className="logo" to="/" aria-label={`${site.name} home`}>
-          <span className="logo__mark" aria-hidden="true">TC</span>
-          <span className="logo__text">
-            {site.name}
-            <small>Ambulance</small>
-          </span>
-        </Link>
+        <Logo />
 
         <nav className="nav" aria-label="Primary">
           <ul className="nav__list">

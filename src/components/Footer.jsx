@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { site, nav } from '../content/site'
 import { services, servicePath } from '../content/services'
+import Logo from './Logo'
 
 // WordPress: footer.php (wp_footer() before </body>)
 export default function Footer() {
@@ -10,13 +11,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <Link className="logo" to="/">
-              <span className="logo__mark" aria-hidden="true">TC</span>
-              <span className="logo__text">
-                {site.name}
-                <small>Ambulance</small>
-              </span>
-            </Link>
+            <Logo className="logo--footer" />
             <p className="footer__blurb">{site.tagline}. Serving {site.serviceAreaText} since {site.founded}.</p>
           </div>
 
