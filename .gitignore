@@ -2,3 +2,6 @@ node_modules
 dist
 *.log
 .DS_Store
+
+# Original uploaded source images (not shipped with the site)
+source-assets/

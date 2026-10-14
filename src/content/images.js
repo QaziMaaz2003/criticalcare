@@ -23,6 +23,11 @@ export const images = {
   ambulanceCity: { src: '/fleet/m21-angle.jpg', alt: 'Texas Critical Care Unit M-21 ambulance on standby for transport dispatch' },
   ambulanceRoad: { src: '/fleet/m21-side.jpg', alt: 'Texas Critical Care Unit M-21 ambulance side profile' },
   ambulanceNight: { src: '/fleet/m21-rear.jpg', alt: 'Texas Critical Care Unit M-21 rear doors with Texas Star high-visibility safety chevrons' },
+  // Transparent cut-outs (no background) used as page decoration: see styles/backdrops.css
+  cutM21Side: { src: '/fleet/cutouts/m21-side.png', alt: '' },
+  cutM19Angle: { src: '/fleet/cutouts/m19-angle.png', alt: '' },
+  cutM21Front: { src: '/fleet/cutouts/m21-front.png', alt: '' },
+  cutM19Rear: { src: '/fleet/cutouts/m19-rear.png', alt: '' },
   m21Front: { src: '/fleet/m21-front.jpg', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },
   m19Rear: { src: '/fleet/m19-rear.jpg', alt: 'Texas Critical Care Unit M-19 rear patient loading doors with safety chevrons' },
   team: { src: u('1755189118414-14c8dacdb082', 1000), alt: 'Three healthcare workers standing together in a clinic' },
