@@ -6,7 +6,7 @@ import { site } from '../content/site'
 export default function Logo({ className = '' }) {
   return (
     <Link className={`logo ${className}`.trim()} to="/" aria-label={`${site.legalName} home`}>
-      <img src={site.logo} alt={site.legalName} width="974" height="296" />
+      <img src={site.logo} alt={site.legalName} width="967" height="290" />
     </Link>
   )
 }

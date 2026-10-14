@@ -7,7 +7,8 @@
 .header .container { --container: 80rem; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: var(--header-h); }
 .logo { display: inline-flex; align-items: center; flex: none; text-decoration: none; }
-.logo img { display: block; height: 3.4rem; width: auto; }
+.logo img { display: block; height: 4.1rem; width: auto; }
+@media (max-width: 47.99rem) { .logo img { height: 3.4rem; } }
 .nav { display: none; }
 .nav__list { display: flex; gap: 1.4rem; }
 .nav__link { white-space: nowrap; text-decoration: none; font-weight: 500; font-size: 0.95rem; padding-block: 0.4rem; border-bottom: 2px solid transparent; }

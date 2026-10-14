@@ -1,6 +1,6 @@
 .footer { background: var(--color-dark); color: var(--color-dark-fg); padding-top: 4rem; }
 .footer__grid { display: grid; gap: 2.5rem; padding-bottom: 3rem; }
-.footer .logo img { height: 4.25rem; }
+.footer .logo img { height: 5.5rem; }
 .footer__blurb { margin-top: 1rem; max-width: 22rem; color: oklch(80% 0.02 170); }
 .footer h3 { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(78% 0.13 27); margin-bottom: 1rem; }
 .footer li { margin-bottom: 0.55rem; }
