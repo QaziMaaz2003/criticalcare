@@ -4,8 +4,9 @@ import { services, servicePath } from '../content/services'
 import { site } from '../content/site'
 
 // WordPress: template-parts/section-services.php (WP_Query for post_type=service)
-// Props: limit (number of cards), showCta (extra "not sure?" card), muted (grey background)
-export default function Services({ limit, showCta = false, muted = true, head = true, exclude, bare = false }) {
+// Props: limit (number of cards), showCta (extra "not sure?" card), muted (grey background),
+//        compact (smaller cards, four in one row on desktop)
+export default function Services({ limit, showCta = false, muted = true, head = true, exclude, bare = false, compact = false }) {
   const all = services.filter((s) => s.slug !== exclude)
   const items = limit ? all.slice(0, limit) : all
   const content = (
@@ -18,7 +19,7 @@ export default function Services({ limit, showCta = false, muted = true, head = 
           />
         )}
 
-        <div className="services__grid">
+        <div className={`services__grid${compact ? ' services__grid--compact' : ''}`}>
           {items.map((s) => (
             <article key={s.slug} className="service-card card">
               <span className="service-card__badge" aria-hidden="true">{s.badge}</span>

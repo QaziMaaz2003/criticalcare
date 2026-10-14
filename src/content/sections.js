@@ -44,7 +44,7 @@ export const work = {
     { key: 'm19Front', caption: 'Unit M-19 front view', home: true },
     { key: 'events', caption: 'Special event standby' },
     { key: 'wheelchair', caption: 'Wheelchair transport', home: true },
-    { key: 'interior2', caption: 'MICU interior' },
+    { key: 'crew', caption: 'Crew & fleet' },
     { key: 'ambulanceRoad', caption: 'Unit M-21 on the road' },
     { key: 'scrubs', caption: 'Our medics' },
     { key: 'ambulanceCity', caption: 'Unit M-21 on standby', home: true },

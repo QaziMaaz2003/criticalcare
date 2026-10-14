@@ -90,3 +90,15 @@
 .careers__roles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 .careers__roles li { padding: 0.35rem 0.9rem; border: 1px solid rgb(255 255 255 / 0.5); border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
 @media (min-width: 60rem) { .careers__box { grid-template-columns: 1.3fr 1fr; gap: 3rem; } }
+
+/* ---------- Compact service cards (e.g. "Other levels of care": four in one row on desktop) ---------- */
+.services__grid--compact { gap: 1rem; }
+.services__grid--compact .service-card { padding: 1.15rem; }
+.services__grid--compact .service-card__badge { width: 2.4rem; height: 2.4rem; margin-bottom: 0.8rem; border-radius: 0.7rem; font-size: 1.05rem; }
+.services__grid--compact h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+.services__grid--compact .service-card__subtitle { margin-bottom: 0.6rem; font-size: 0.78rem; }
+.services__grid--compact .service-card__text { font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.6rem; }
+.services__grid--compact .check-list { font-size: 0.8rem; line-height: 1.4; padding-top: 0.4rem; }
+.services__grid--compact .check-list li { margin-bottom: 0.3rem; padding-left: 1.3rem; }
+.services__grid--compact .service-card__link { margin-top: 0.8rem; font-size: 0.85rem; }
+@media (min-width: 64rem) { .services__grid--compact { grid-template-columns: repeat(4, 1fr); } }

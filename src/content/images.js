@@ -19,7 +19,6 @@ export const images = {
   clinician: { src: u('1532938911079-1b06ac7ceec7', 1000), alt: 'Clinician in a white coat holding a red stethoscope' },
   care: { src: u('1580869318757-a6c605b061ed', 900), alt: 'Caregiver holding a patient’s hand in a supportive gesture' },
   caregiver: { src: u('1762955911431-4c44c7c3f408', 1000), alt: 'Caregiver helping two older adults at a table' },
-  interior2: { src: u('1696243144413-503bc482a608', 1200), alt: 'Ambulance interior with stretcher and medical equipment, doors open' },
   ambulanceCity: { src: '/fleet/cutouts/m21-side.png', alt: 'Texas Critical Care Unit M-21 ambulance, side view' },
   ambulanceRoad: { src: '/fleet/cutouts/m21-side.png', alt: 'Texas Critical Care Unit M-21 ambulance, side profile' },
   ambulanceNight: { src: '/fleet/cutouts/m21-front.png', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },

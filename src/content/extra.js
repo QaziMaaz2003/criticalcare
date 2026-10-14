@@ -66,7 +66,7 @@ export const fleet = {
   title: 'Well-maintained ambulances, fully equipped.',
   text: 'Our ambulances carry 12 lead EKG monitor/defibrillators, transport ventilators, CPAP, ETCO2 and SPO2 monitoring equipment, and emergency medications that follow current ACLS guidelines.',
   points: ['Configured as MICU with the latest technology', 'Staffed by certified, highly trained medics', 'Maintained to State and City standards'],
-  image: 'interior2',
+  image: 'crew',
 }
 
 export const location = {

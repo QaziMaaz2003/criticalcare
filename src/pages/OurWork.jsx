@@ -18,7 +18,7 @@ export default function OurWork() {
       <Split eyebrow={eventsBlock.eyebrow} title={eventsBlock.title} text={eventsBlock.text} points={eventsBlock.points} image={eventsBlock.image} reverse>
         <Link className="btn btn--primary" to="/services/special-events">About event coverage</Link>
       </Split>
-      <Split dark eyebrow={fleet.eyebrow} title={fleet.title} text={fleet.text} points={fleet.points} image={fleet.image} />
+      <Split dark portrait eyebrow={fleet.eyebrow} title={fleet.title} text={fleet.text} points={fleet.points} image={fleet.image} />
       <Coverage />
       <CtaBand />
     </>

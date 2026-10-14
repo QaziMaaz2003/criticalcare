@@ -193,9 +193,9 @@ img[src*="/fleet/cutouts/"] { object-fit: contain; }
 
 /* Page banners: the vehicle stands on the banner's right side at full strength, clear of the text */
 .page-hero__inner { position: relative; z-index: 1; }
-.page-hero__vehicle { position: absolute; z-index: 0; right: max(var(--gutter), calc((100% - var(--container)) / 2)); bottom: 0; height: 80%; max-width: 40%; width: auto; object-fit: contain; object-position: right bottom; filter: drop-shadow(0 12px 14px rgb(0 0 0 / 0.35)); }
+.page-hero__vehicle { position: absolute; z-index: 0; right: max(var(--gutter), calc((100% - var(--container)) / 2)); top: 50%; transform: translateY(-50%); width: min(40%, 32rem); height: auto; object-fit: contain; filter: drop-shadow(0 12px 14px rgb(0 0 0 / 0.35)); }
 .page-hero:has(.page-hero__vehicle) .lead { max-width: 30rem; }
-@media (max-width: 63.99rem) { .page-hero__vehicle { opacity: 0.3; max-width: 70%; height: 72%; } }
+@media (max-width: 63.99rem) { .page-hero__vehicle { opacity: 0.3; width: min(70%, 28rem); } }
 
 /* Cards: the vehicle sits on the card's own background */
 .news-card__media:has(img[src*="/fleet/cutouts/"]) { background: linear-gradient(180deg, var(--color-muted), #fff); }
@@ -206,3 +206,11 @@ img[src*="/fleet/cutouts/"] { object-fit: contain; }
 .gallery__item:hover img[src*="/fleet/cutouts/"] { transform: scale(1.04); }
 .gallery__item:has(img[src*="/fleet/cutouts/"]) figcaption { background: none; color: var(--color-fg); }
 .strip img[src*="/fleet/cutouts/"] { background: var(--color-muted); padding: 1.25rem 0.75rem; }
+
+/* The crew/stretcher photo is a tall shot: when it is cropped into a wide box, keep the ambulance
+   doors and the medics (lower-middle of the picture) in frame. */
+img[src*="photo-1634025130850"] { object-position: 50% 62%; }
+
+/* The featured news photo is a portrait shot: cap its height so the card stays a compact banner */
+.news-card--featured .news-card__img { height: 100%; max-height: 24rem; min-height: 16rem; }
+@media (min-width: 60rem) { .news-card--featured .news-card__img { height: 24rem; } }

@@ -8,7 +8,7 @@ export const articles = [
     category: 'Guides',
     date: '2026-09-15',
     readTime: '3 min read',
-    image: 'interior2',
+    image: 'crew',
     excerpt: 'A plain-language guide to the three levels of ambulance transport and when each one is used.',
     body: [
       'Not every ambulance transfer is the same. The right unit depends on the patient’s condition, the equipment they need on the way and the level of monitoring required.',

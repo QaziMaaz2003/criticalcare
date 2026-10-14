@@ -109,7 +109,7 @@ export default function ServiceDetail() {
         <div className="container">
           <SectionHead eyebrow="More services" title="Other levels of care." />
         </div>
-        <ServicesGrid exclude={service.slug} head={false} muted={false} bare />
+        <ServicesGrid exclude={service.slug} head={false} muted={false} bare compact />
       </section>
 
       <CtaBand />
