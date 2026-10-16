@@ -4,14 +4,14 @@ const u = (id, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`
 
 export const images = {
-  hero: { src: '/fleet/cutouts/m19-angle.png', alt: 'Texas Critical Care MICU Unit M-19 ambulance' },
-  m19Front: { src: '/fleet/cutouts/m19-angle.png', alt: 'Texas Critical Care MICU Unit M-19 ambulance, front three-quarter view' },
+  hero: { src: '/fleet/new_images/m19-angle.jpg', alt: 'Texas Critical Care MICU Unit M-19 ambulance outside an emergency department at night' },
+  m19Front: { src: '/fleet/new_images/m19-angle.jpg', alt: 'Texas Critical Care MICU Unit M-19 ambulance, front three-quarter view' },
   about: { src: u('1516841273335-e39b37888115', 1000), alt: 'Medical team walking down a bright hospital corridor' },
-  micu: { src: '/fleet/cutouts/m19-rear.png', alt: 'Texas Critical Care Unit M-19 rear patient loading doors' },
+  micu: { src: '/fleet/new_images/m21-rear.jpg', alt: 'Texas Critical Care Unit M-21 rear patient loading doors' },
   crew: { src: u('1634025130850-1d24389e25c7', 900), alt: 'Two medics loading a stretcher into the back of an ambulance' },
   response: { src: u('1649260257572-91bf6f94cff6', 1000), alt: 'Paramedics giving emergency care to a patient' },
   wheelchair: { src: u('1732194438396-394d2b7c2436', 1000), alt: 'Smiling man seated in a wheelchair at home' },
-  fleet: { src: '/fleet/cutouts/m19-angle.png', alt: 'Texas Critical Care MICU Unit M-19 ambulance' },
+  fleet: { src: '/fleet/new_images/m19-angle.jpg', alt: 'Texas Critical Care MICU Unit M-19 ambulance' },
   events: { src: u('1629217855633-79a6925d6c47', 1200), alt: 'Packed stadium at night during a live event' },
   houston: { src: u('1585501365481-dce341e1de0c', 1600), alt: 'Houston skyline under a blue sky' },
   houstonNight: { src: u('1692154600992-463fa9b27abd', 1600), alt: 'Houston skyline lit up at night' },
@@ -19,12 +19,12 @@ export const images = {
   clinician: { src: u('1532938911079-1b06ac7ceec7', 1000), alt: 'Clinician in a white coat holding a red stethoscope' },
   care: { src: u('1580869318757-a6c605b061ed', 900), alt: 'Caregiver holding a patient’s hand in a supportive gesture' },
   caregiver: { src: u('1762955911431-4c44c7c3f408', 1000), alt: 'Caregiver helping two older adults at a table' },
-  ambulanceCity: { src: '/fleet/cutouts/m21-side.png', alt: 'Texas Critical Care Unit M-21 ambulance, side view' },
-  ambulanceRoad: { src: '/fleet/cutouts/m21-side.png', alt: 'Texas Critical Care Unit M-21 ambulance, side profile' },
-  ambulanceNight: { src: '/fleet/cutouts/m21-front.png', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },
-  // Ambulance keys above use the transparent cut-outs in /fleet/cutouts (4 images reused everywhere).
-  m21Front: { src: '/fleet/cutouts/m21-front.png', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },
-  m19Rear: { src: '/fleet/cutouts/m19-rear.png', alt: 'Texas Critical Care Unit M-19 rear patient loading doors with safety chevrons' },
+  ambulanceCity: { src: '/fleet/new_images/m21-side.jpg', alt: 'Texas Critical Care Unit M-21 ambulance, side view' },
+  ambulanceRoad: { src: '/fleet/new_images/m21-angle.jpg', alt: 'Texas Critical Care Unit M-21 ambulance, front three-quarter view' },
+  ambulanceNight: { src: '/fleet/new_images/m21-front.jpg', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },
+  // Ambulance keys above use the 5 photos in /fleet/new_images (reused wherever an ambulance appears).
+  m21Front: { src: '/fleet/new_images/m21-front.jpg', alt: 'Texas Critical Care Unit M-21 ambulance, front view' },
+  m19Rear: { src: '/fleet/new_images/m21-rear.jpg', alt: 'Texas Critical Care Unit M-21 rear patient loading doors with safety chevrons' },
   team: { src: u('1755189118414-14c8dacdb082', 1000), alt: 'Three healthcare workers standing together in a clinic' },
   scrubs: { src: u('1594824476967-48c8b964273f', 900), alt: 'Smiling healthcare professional in teal scrubs' },
   stadium: { src: u('1489944440615-453fc2b6a9a9', 1200), alt: 'Large stadium lit up before an event' },

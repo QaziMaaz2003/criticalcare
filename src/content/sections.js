@@ -49,7 +49,7 @@ export const work = {
     { key: 'scrubs', caption: 'Our medics' },
     { key: 'ambulanceCity', caption: 'Unit M-21 on standby', home: true },
     { key: 'caregiver', caption: 'Compassionate care' },
-    { key: 'm19Rear', caption: 'Unit M-19 rear safety chevrons' },
+    { key: 'm19Rear', caption: 'Unit M-21 rear safety chevrons' },
   ],
 }
 
